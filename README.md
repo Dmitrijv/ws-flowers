@@ -1,2 +1,2 @@
-# ws-flowers
-Interview task for Will &amp; Skill.
+# Will & Skill Interview Task
+
