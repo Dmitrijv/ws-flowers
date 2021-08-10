@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Dmitrij Velström - W&S Interview Task</title>
+        <title>Dmitrij V. - W&S Interview Task</title>
         <meta name="description" content="Made in Sweden" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
