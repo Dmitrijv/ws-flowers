@@ -1,28 +1,11 @@
 import Head from "next/head";
 import Router from "next/router";
 import { useRouter } from "next/router";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 
 import { FlowerContext } from "../contexts/FlowerContext";
 
-export default function Flower() {
-  const router = useRouter();
-  const id = router.query["id"] || router.asPath.match(new RegExp(`[&?]id=(.*)(&|$)`)); // wtf?
-  const { flowersById } = useContext(FlowerContext);
-  const [flower, setFlower] = useState(null);
-
-  useEffect(() => {
-    if (flowersById[id]) {
-      setFlower(flowersById[id]);
-    } else if (id) {
-      fetch(`https://flowers-mock-data.firebaseio.com/flowers/${id}.json`)
-        .then((res) => res.json())
-        .then((data) => {
-          setFlower(data);
-        });
-    }
-  }, []);
-
+export default function Flower({ flower }) {
   return (
     <>
       {/* Head */}
@@ -35,4 +18,24 @@ export default function Flower() {
       <h1>{flower?.common_name}</h1>
     </>
   );
+}
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(`https://flowers-mock-data.firebaseio.com/flowers/${params.id}.json`);
+  const flower = await res.json();
+
+  return {
+    props: { flower: flower },
+  };
+}
+
+export async function getStaticPaths() {
+  const res = await fetch("https://flowers-mock-data.firebaseio.com/flowers.json");
+  const flowers = await res.json();
+
+  const paths = flowers.map((_, index) => ({
+    params: { id: index.toString() },
+  }));
+
+  return { paths, fallback: false };
 }

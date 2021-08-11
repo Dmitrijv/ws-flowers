@@ -1,14 +1,10 @@
 import Head from "next/head";
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Link from "next/link";
 import styles from "../../styles/Home.module.css";
 
-import { FlowerContext } from "./../contexts/FlowerContext";
-
-export default function FlowersList() {
-  const { flowersById } = useContext(FlowerContext);
-
-  if (!flowersById || Object.values(flowersById).length === 0) return <></>;
+export default function FlowersList({ flowers }) {
+  if (!flowers || flowers.length === 0) return <></>;
 
   return (
     <>
@@ -19,16 +15,25 @@ export default function FlowersList() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Content */}
-      <h1>{Object.values(flowersById).length} flowers on this list</h1>
+      <h1>{flowers.length} flowers on this list</h1>
       <ul>
-        {Object.values(flowersById).map((flower) => {
+        {flowers.map((flower, index) => {
           return (
-            <li key={`fli-` + flower["ws_id"]}>
-              <Link href={`/flowers/${flower["ws_id"]}`}>{flower.common_name}</Link>
+            <li key={`fli-` + index}>
+              <Link href={`/flowers/${index}`}>{flower.common_name}</Link>
             </li>
           );
         })}
       </ul>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("https://flowers-mock-data.firebaseio.com/flowers.json");
+  const flowers = await res.json();
+
+  return {
+    props: { flowers: flowers },
+  };
 }
