@@ -1,9 +1,5 @@
 import Head from "next/head";
-import Router from "next/router";
-import { useRouter } from "next/router";
-import { useEffect, useContext } from "react";
-
-import { FlowerContext } from "../contexts/FlowerContext";
+import Link from "next/link";
 
 export default function Flower({ flower }) {
   return (
