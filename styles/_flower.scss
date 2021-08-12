@@ -1,0 +1,109 @@
+.flower-container {
+  max-width: 1000px;
+  margin: -70px auto 60px auto;
+
+  display: grid;
+  grid-template-areas:
+    "about-area"
+    "chat-area"
+    "link-area";
+  gap: 20px;
+
+  background: transparent;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 3fr 2fr;
+
+    grid-template-areas:
+      "about-area chat-area"
+      "link-area chat-area";
+  }
+}
+
+/* About */
+.flower-container .flower-about {
+  grid-area: about-area;
+  padding: 30px 40px;
+  background-color: white;
+  color: rgb(68, 68, 68);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 12px -12px;
+
+  h1 {
+    font-size: 48px;
+    margin: 0 0 4px 0;
+  }
+
+  h2 {
+    color: rgb(101, 110, 119);
+    font-size: 32px;
+  }
+
+  .flower-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .notes {
+    margin: 18px 0;
+    font-size: 18px;
+  }
+
+  .details {
+    background-color: rgb(246, 246, 246);
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  .details p + p {
+    margin-top: 3px;
+  }
+}
+
+/* Gallery Link */
+.flower-container .gallery-link {
+  grid-area: link-area;
+  padding: 0 40px 30px 40px;
+  height: min-content;
+  a {
+    color: rgb(75, 135, 255);
+    font-size: 18px;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Chat */
+.flower-container .flower-chat {
+  grid-area: chat-area;
+
+  min-height: 100px;
+  height: min-content;
+
+  padding: 30px 40px;
+  background-color: white;
+  color: rgb(68, 68, 68);
+
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 12px -12px;
+
+  h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .comment {
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  .comment .message {
+    font-weight: normal;
+  }
+
+  .comment + .comment {
+    border-top: 1px dashed whitesmoke;
+  }
+}

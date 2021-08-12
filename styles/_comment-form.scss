@@ -1,0 +1,25 @@
+.comment-form {
+  width: 100%;
+  margin-top: 20px;
+
+  textarea {
+    width: 312px;
+    max-width: 312px;
+    height: 80px;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    border-radius: 6px;
+    outline: none;
+    background-color: #f7f7f7;
+  }
+
+  textarea:focus {
+    box-shadow: 0 0 0 1px lighten(gray, 25%);
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 6px;
+  }
+}

@@ -1,0 +1,56 @@
+.flowers-container {
+  max-width: 1000px;
+  padding: 40px;
+  margin: -70px auto 60px auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 12px -12px;
+}
+
+.flower-card {
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: none;
+  border-bottom: 1px solid transparent;
+  background-color: white;
+
+  transition: all 0.2s ease-in-out;
+  transform: translateZ(0);
+
+  &:hover {
+    @media (min-width: 767.98px) {
+      transform: translateY(-3px);
+    }
+  }
+
+  &.winter:hover {
+    color: #9a9997;
+    border-bottom: 1px solid #9a9997;
+  }
+
+  &.spring:hover {
+    color: #a99a35;
+    border-bottom: 1px solid #a99a35;
+  }
+
+  &.summer:hover {
+    color: #8baa43;
+    border-bottom: 1px solid #8baa43;
+  }
+
+  &.autumn:hover {
+    color: #e89c3c;
+    border-bottom: 1px solid #e89c3c;
+  }
+
+  .flower-image {
+    width: 100%;
+  }
+
+  .flower-name {
+    padding: 8px 16px;
+    font-size: 22px;
+    text-align: center;
+    background-color: rgb(246, 246, 246);
+  }
+}
