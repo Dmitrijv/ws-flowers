@@ -23,6 +23,7 @@
 /* About */
 .flower-container .flower-about {
   grid-area: about-area;
+  height: min-content;
   padding: 30px 40px;
   background-color: white;
   color: rgb(68, 68, 68);
