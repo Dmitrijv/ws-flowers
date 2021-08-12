@@ -35,7 +35,7 @@ export default function Seasons({ flowers = [] }) {
       </header>
 
       {/* Content */}
-      <main className="flowers-container">
+      <main className="seasons-container">
         <div className="seasons-grid">
           {/* Winter */}
           <div className={"season winter" + (filter == "winter" ? " active" : "")}>
@@ -88,6 +88,9 @@ export default function Seasons({ flowers = [] }) {
           </table>
         </div>
       </main>
+      <div className="gallery-link">
+        <Link href={`/flowers`}>← Back to gallery</Link>{" "}
+      </div>
       <div className="fluff"></div>
     </>
   );

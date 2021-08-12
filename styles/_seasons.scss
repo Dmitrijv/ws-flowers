@@ -49,6 +49,14 @@
   }
 }
 
+.seasons-container {
+  max-width: 1000px;
+  padding: 40px;
+  margin: -70px auto 10px auto;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 12px -12px;
+}
+
 .filtered-list {
   h2 {
     margin: 20px 0;
@@ -62,4 +70,10 @@
   tr a {
     font-size: 14px;
   }
+}
+
+.gallery-link {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: right;
 }
