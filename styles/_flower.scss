@@ -83,6 +83,10 @@
   min-height: 100px;
   height: min-content;
 
+  @media (min-width: 992px) {
+    max-width: 392px;
+  }
+
   padding: 30px 40px;
   background-color: white;
   color: rgb(68, 68, 68);
