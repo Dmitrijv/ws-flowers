@@ -11,7 +11,7 @@ export default function Flower({ flower, flowerId, comments }) {
     <>
       {/* Head */}
       <Head>
-        <title>{flower?.common_name}</title>
+        <title>Flower: {flower?.common_name}</title>
         <meta name="description" content="Made in Sweden" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

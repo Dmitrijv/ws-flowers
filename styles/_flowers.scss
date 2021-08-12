@@ -4,6 +4,15 @@
   margin: -70px auto 60px auto;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 6px 12px -12px;
+
+  h2.intro {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    a {
+      font-size: 32px;
+    }
+  }
 }
 
 .flower-card {

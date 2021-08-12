@@ -1,5 +1,5 @@
-import Head from "next/head";
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
 import Masonry from "react-masonry-css";
 
@@ -10,8 +10,6 @@ export default function FlowersList({ flowers }) {
     800: 2,
     700: 1,
   };
-
-  if (!flowers || flowers.length === 0) return <></>;
 
   function getSeasonClass(flower) {
     const season = flower?.blooming_season.toLowerCase();
@@ -26,7 +24,7 @@ export default function FlowersList({ flowers }) {
     <>
       {/* Head */}
       <Head>
-        <title>Dmitrij V. - W&S Task</title>
+        <title>Flowers</title>
         <meta name="description" content="Made in Sweden" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -42,13 +40,16 @@ export default function FlowersList({ flowers }) {
 
       {/* Content */}
       <main className="flowers-container">
+        <h2 className="intro">
+          Discover {flowers.length} flowers or check out <Link href={`/seasons`}>Season stats</Link>!
+        </h2>
         <Masonry breakpointCols={breakpoints} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
           {flowers.map((flower, index) => {
             return (
               <div className="clickable" key={`fli-` + index}>
                 <Link href={`/flowers/${index}`}>
                   <div className={"flower-card " + getSeasonClass(flower)}>
-                    <img src={flower?.cover_image || "/png/default.png"} alt="Flower." className={"flower-image"} />
+                    <img src={flower?.cover_image || "/png/default.png"} alt="Flower." className="flower-image" />
                     <h2 className="flower-name">
                       {flower?.sun && <span>☀️</span>} {flower?.common_name}
                     </h2>

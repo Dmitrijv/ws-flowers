@@ -1,0 +1,65 @@
+.seasons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "winter spring summer autumn";
+  gap: 20px;
+
+  transition: text-decoration 0.2s ease-in-out;
+
+  .season.active,
+  .season:hover {
+    h2 {
+      text-decoration: underline;
+    }
+  }
+
+  .season h2 {
+    margin-bottom: 4px;
+  }
+
+  .season.winter {
+    grid-area: "winter";
+    h2 {
+      color: #9a9997;
+    }
+  }
+  .season.spring {
+    grid-area: "spring";
+    h2 {
+      color: #a99a35;
+    }
+  }
+  .season.summer {
+    grid-area: "summer";
+    h2 {
+      color: #8baa43;
+    }
+  }
+  .season.autumn {
+    grid-area: "autumn";
+    h2 {
+      color: #e89c3c;
+    }
+  }
+
+  .season-image {
+    width: 100%;
+    height: 410px;
+    object-fit: cover;
+  }
+}
+
+.filtered-list {
+  h2 {
+    margin: 20px 0;
+    font-size: 32px;
+  }
+}
+
+.result-table {
+  width: 100%;
+  font-size: 14px;
+  tr a {
+    font-size: 14px;
+  }
+}
